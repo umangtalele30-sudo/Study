@@ -316,7 +316,7 @@ FROM (
 WHERE row_num <= 2;
 ```
 
-This is a **very good interview-level PostgreSQL query**.
+This is a **very good interview-level query**.
 
 ---
 
