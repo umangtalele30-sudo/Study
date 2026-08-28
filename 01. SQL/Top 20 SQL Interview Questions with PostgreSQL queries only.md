@@ -316,7 +316,7 @@ FROM (
 WHERE row_num <= 2;
 ```
 
-This is a **very good interview-level PostgreSQL query**.
+This is a **very good interview-level query**.
 
 ---
 
@@ -411,5 +411,3 @@ FROM (
 ) t
 WHERE rn <= 2;
 ```
-
-These five cover **subqueries, `GROUP BY`, aggregates, CTE/window-function concepts, `PARTITION BY`, `ORDER BY`, and PostgreSQL `LIMIT/OFFSET`**—all very useful for interviews.
