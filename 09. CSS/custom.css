@@ -1,0 +1,1104 @@
+/* ============================================================
+   STUDY_2026 MASTER THEME   Author : Umang Talele Version : 1.0
+============================================================ */
+:root {
+    --ink: #26384D;
+    --muted-ink: #68788A;
+    --navy: #142B49;
+    --teal: #0C7180;
+    --teal-soft: #EAF6F5;
+    --coral: #B44F61;
+    --gold: #C2811A;
+    --paper: #FAFCFD;
+    --line: #D8E4E8;
+    --surface-shadow: 0 8px 22px rgba(20, 43, 73, .07);
+    --header-bg-1: #142B49;
+    --header-bg-2: #125C70;
+    --header-bg-3: #218B8D;
+    --header-border: rgba(255, 255, 255, .16);
+    --header-shadow: rgba(20, 43, 73, .18);
+    --table-header-border: rgba(255, 255, 255, .20);
+    --muted-grey: #777;
+    /* --watermark-text: rgba(20, 43, 73, .17); */
+    /* --watermark-print: rgba(0, 0, 0, .10); */
+    /* --watermark-opacity: 100%; */
+    --code-bg: #F1F5F7;
+    --code-border: #557187;
+    --code-inline-text: #914358;
+    --code-inline-bg: #F9EDF0;
+    --blockquote-border: #2C9B99;
+    --blockquote-bg: #EAF6F5;
+    --note-text: #735116;
+    --note-bg: #FFF8E8;
+    --note-border: #C2811A;
+    --warning-text: #873E4B;
+    --warning-bg: #FFF0F1;
+    --warning-border: #C65B68;
+    --success-text: #28604B;
+    --success-bg: #ECF8F0;
+    --success-border: #3B9B70;
+    --important-text: #7D3F4B;
+    --example-bg: #F2F6F8;
+    --example-border: #71879A;
+    --definition-bg: #F1F3FA;
+    --definition-border: #6879B0;
+    --hr-pill: #3A9E98;
+    --table-border-alt: #E1E8EF;
+    --table-row-alt: #F3F8F8;
+    --table-hover: #E1F2F0;
+    --table-header-bg-2: #155C70;
+    --selection-bg: var(--teal);
+    --focus-outline: rgba(217, 93, 57, .42);
+    --footer-text: #888;
+}
+
+/* ==========================================================
+   WATERMARK - LINKEDIN
+========================================================== */
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+body::before,
+body::after {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    z-index: -1 !important;
+}
+
+body::before {
+    content: "LinkedIn@Umang Talele";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    opacity: 100;
+}
+
+@media print {
+    body::before {
+        /* content: "LinkedIn@Umang Talele"; Watermark */
+        color: rgba(0, 0, 0, 0.10);
+        font-size: 48px;
+        opacity: 100;
+    }
+}
+
+/* ==========================================================
+   PROFILE WATERMARK
+========================================================== */
+body::after {
+    content: "";
+    inset: 0;
+    background-image: url("./profile-photo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 320px;
+    opacity: 100%;
+    mix-blend-mode: multiply;
+}
+
+pre,
+code,
+blockquote,
+.note,
+.warning,
+.success,
+.interview {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* ============================================================
+   GLOBAL SETTINGS
+============================================================ */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #2d3436;
+    /* font-weight: bold; */
+    color: #1C4980;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+DOCUMENT HEADER
+============================================================ */
+.doc-header {
+    text-align: center;
+    background: linear-gradient(135deg, #0078D4, #005A9E, #003B6D);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.doc-title {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.doc-subtitle {
+    font-size: 14px;
+    opacity: .9;
+}
+
+/* ============================================================
+   HEADINGS
+============================================================ */
+h1 {
+    color: #005A9E;
+    /* border-bottom: 4px solid #0078D4; */
+    /* padding-bottom: 10px; */
+    font-weight: bold;
+}
+
+h2 {
+    color: #005A9E;
+    /* border-left: 6px solid #0078D4; */
+    /* background: #F3F9FD; */
+    /* padding: 10px; */
+    /* border-radius: 5px; */
+    font-weight: bold;
+}
+
+h3 {
+    color: #1C4980;
+    font-weight: bold;
+}
+
+h4 {
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+/* ============================================================
+   QUESTION FORMAT
+============================================================ */
+.line {
+    display: block;
+    position: relative;
+    padding-right: 180px;
+    line-height: 1.8;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.line::after {
+    /* content: "💼 LinkedIn · @UmangTalele"; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 9px;
+    color: #777;
+}
+
+/* ============================================================
+   INTERVIEW QUESTIONS
+============================================================ */
+.interview {
+    display: block;
+    background: #F8FBFE;
+    border-left: 5px solid #0078D4;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #1C4980;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* ============================================================
+   IMPORTANT NOTE
+============================================================ */
+.note {
+    background: #FFF8E1;
+    border-left: 5px solid #F4B400;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ============================================================
+   WARNING
+============================================================ */
+.warning {
+    background: #FDECEC;
+    border-left: 5px solid #EA4335;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ============================================================
+   SUCCESS
+============================================================ */
+.success {
+    background: #E8F5E9;
+    border-left: 5px solid #34A853;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ============================================================
+   CODE
+============================================================ */
+pre {
+    border-left: 5px solid #858585;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+/* 
+code {
+    color: #C7254E;
+    background: #F5F5F5;
+    padding: 2px 5px;
+    border-radius: 4px;
+} */
+
+/* ============================================================
+   BLOCKQUOTE
+============================================================ */
+blockquote {
+    border-left: 5px solid #00BCF2;
+    background: #F3F9FD;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* ============================================================
+   PAGE FOOTER
+============================================================ */
+.footer {
+    text-align: center;
+    color: #888;
+    margin-top: 30px;
+    font-size: 11px;
+}
+
+/* ============================================================
+   SECTION DIVIDER
+============================================================ */
+hr {
+    border: none;
+    border-top: 2px dashed #0078D4;
+    margin: 25px 0;
+}
+
+/* ==========================================================
+   QUESTIONS
+========================================================== */
+.question {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1C4980;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================
+   ANSWERS
+========================================================== */
+.answer {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================
+   NOTE
+========================================================== */
+.note {
+    background: #FFF8E1;
+    border-left: 5px solid #F4B400;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   TIP
+========================================================== */
+.tip {
+    background: #E8F4FD;
+    border-left: 5px solid #2196F3;
+    padding: 1px;
+    border-radius: 6px;
+    margin: 1px 0;
+}
+
+/* ==========================================================
+   IMPORTANT
+========================================================== */
+.important {
+    background: #FFF3E0;
+    border-left: 5px solid #FB8C00;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   WARNING
+========================================================== */
+.warning {
+    background: #FDECEC;
+    border-left: 5px solid #EA4335;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   SUCCESS
+========================================================== */
+.success {
+    background: #E8F5E9;
+    border-left: 5px solid #34A853;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   INTERVIEW QUESTION
+========================================================== */
+.interview {
+    background: #F3F9FD;
+    border-left: 5px solid #0078D4;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+/* ==========================================================
+   EXAMPLE
+========================================================== */
+.example {
+    background: #F8F9FA;
+    border-left: 5px solid #6C757D;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   DEFINITION
+========================================================== */
+.definition {
+    background: #F4F7FF;
+    border-left: 5px solid #5C6BC0;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   PROFILE WATERMARK
+========================================================== */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("./profile-photo.png"), url("./profile-photo.png"); */
+    background-repeat: no-repeat;
+    background-position: center center, right 22px bottom 22px;
+    background-size: 400px, 110px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: -2 !important;
+}
+
+/*==========================================================
+    PROFESSIONAL TABLE CSS
+    Markdown PDF | A4 Optimized
+==========================================================*/
+
+table {
+    width: 100%;
+    margin: 18px 0 24px;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 14px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    border: 1px solid #D8E3F0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+thead th,
+th {
+    background: #0078D4;
+    color: #FFFFFF;
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center !important;
+    vertical-align: middle;
+    border-right: 1px solid rgba(255, 255, 255, .20);
+}
+
+th:last-child {
+    border-right: none;
+}
+
+thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+tbody td,
+td {
+    padding: 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+
+    border-right: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+
+    color: #1F2937;
+    font-size: 14px;
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+/* Force all Markdown generated alignment */
+
+td[align="right"],
+td[align="left"],
+td[align="center"] {
+    text-align: center !important;
+}
+
+/* ===========================
+   ROW COLORS
+=========================== */
+
+tbody tr:nth-child(odd) {
+    background: #FFFFFF;
+}
+
+tbody tr:nth-child(even) {
+    background: #F8FAFC;
+}
+
+/* Hover */
+
+tbody tr:hover {
+    background: #EAF4FE;
+}
+
+/* ===========================
+   LAST ROW
+=========================== */
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody td:last-child {
+    border-right: none;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* ===========================
+   FIRST COLUMN
+=========================== */
+
+tbody td:first-child {
+    font-weight: 600;
+    color: #005A9E;
+}
+
+/* ===========================
+   COLUMN WIDTHS
+=========================== */
+
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 15%;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 45%;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 40%;
+}
+
+/* If table has 4 columns */
+
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 25%;
+}
+
+/* ===========================
+   PDF SETTINGS
+=========================== */
+
+table {
+    page-break-inside: avoid;
+}
+
+tr {
+    page-break-inside: avoid;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tfoot {
+    display: table-footer-group;
+}
+
+/* ============================================================
+   REFINED COLOR SYSTEM
+============================================================ */
+
+p,
+li,
+dd,
+dt,
+.answer {
+    color: var(--ink);
+}
+
+h1,
+h2 {
+    color: var(--navy);
+}
+
+h3,
+.question,
+.interview,
+tbody td:first-child {
+    color: var(--teal);
+}
+
+h4,
+strong,
+b {
+    color: var(--coral);
+}
+
+a {
+    color: var(--teal);
+    text-decoration-color: rgba(8, 127, 140, .45);
+}
+
+a:hover {
+    color: var(--coral);
+}
+
+.doc-header {
+    background: linear-gradient(135deg, var(--navy), var(--teal), #35A69B);
+    box-shadow: 0 10px 24px rgba(23, 50, 77, .16);
+}
+
+.doc-title,
+.doc-subtitle,
+thead th,
+th {
+    color: #FFFFFF;
+}
+
+.line::after,
+.footer {
+    color: var(--muted-ink);
+}
+
+.interview {
+    background: #EDF8F8;
+    border-left-color: var(--teal);
+}
+
+.note {
+    color: #704F13;
+    background: #FFF8E7;
+    border-left-color: var(--gold);
+}
+
+.tip,
+blockquote {
+    color: #245D68;
+    background: var(--teal-soft);
+    border-left-color: var(--teal);
+}
+
+.important {
+    color: #87421F;
+    background: #FFF1EA;
+    border-left-color: var(--coral);
+}
+
+.warning {
+    color: #8C3030;
+}
+
+.success {
+    color: #246B42;
+}
+
+.example,
+.definition,
+pre {
+    color: var(--ink);
+    border-left-color: #6C7F95;
+}
+
+code {
+    color: #9B3D59;
+    background: #F5EEF1;
+}
+
+hr {
+    border-top-color: #56B8B0;
+}
+
+table {
+    border-color: var(--line);
+}
+
+thead th,
+th {
+    background: var(--navy);
+}
+
+tbody td,
+td {
+    color: var(--ink);
+    border-color: #E1E8EF;
+}
+
+tbody tr:nth-child(even) {
+    background: #F4F8FA;
+}
+
+tbody tr:hover {
+    background: #E4F4F2;
+}
+
+/* ============================================================
+   READING EXPERIENCE AND SECTION SEPARATORS
+============================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    letter-spacing: .01em;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    color: #FFFFFF;
+    background: var(--teal);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(217, 93, 57, .42);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+blockquote,
+pre,
+table {
+    scroll-margin-top: 24px;
+}
+
+h1,
+h2 {
+    letter-spacing: .015em;
+}
+
+h1::after,
+h2::after {
+    display: block;
+    width: 54px;
+    height: 3px;
+    margin-top: 7px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--coral), var(--gold));
+    content: "";
+}
+
+hr {
+    position: relative;
+    height: 18px;
+    margin: 32px 0;
+    border: 0;
+    background: linear-gradient(to bottom,
+            transparent 0,
+            transparent 8px,
+            #C9DCD9 8px,
+            #C9DCD9 9px,
+            transparent 9px);
+}
+
+hr::after {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    width: 11px;
+    height: 11px;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    background: var(--coral);
+    box-shadow: 0 0 0 2px var(--gold);
+    content: "";
+    transform: translateX(-50%);
+}
+
+pre {
+    position: relative;
+    overflow-x: auto;
+    padding-top: 34px;
+    color: #23364D;
+    background: #F3F6F8;
+    box-shadow: inset 0 0 0 1px rgba(108, 127, 149, .12);
+}
+
+pre::before {
+    content: "LinkedIn@UmangTalele";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #b7b7b7;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* 
+code {
+    padding: 2px 5px;
+    border-radius: 4px;
+} */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .doc-header {
+        padding: 22px 18px;
+    }
+
+    .doc-title {
+        font-size: 28px;
+    }
+
+    .line {
+        padding-right: 0;
+    }
+
+    .line::after {
+        display: none;
+    }
+
+    body::after {
+        background-size: 260px, 76px;
+        background-position: center center, right 10px bottom 10px;
+    }
+}
+
+@media print {
+    body {
+        background: #FFFFFF;
+    }
+
+    hr {
+        margin: 22px 0;
+    }
+
+    body::after {
+        background-size: 300px, 85px;
+        background-position: center center, right 12px bottom 12px;
+    }
+}
+
+/* ============================================================
+   POLISHED EDITORIAL PALETTE
+============================================================ */
+body {
+    color: var(--ink);
+    /* background:
+        linear-gradient(115deg, rgba(234, 246, 245, .7), transparent 35%),
+        linear-gradient(290deg, rgba(255, 247, 231, .65), transparent 32%),
+        var(--paper); */
+}
+
+.doc-header {
+    background: linear-gradient(120deg, var(--navy) 0%, #125C70 62%, #218B8D 100%);
+    border: 1px solid rgba(255, 255, 255, .16);
+    box-shadow: 0 14px 30px rgba(20, 43, 73, .18);
+}
+
+h1,
+h2 {
+    color: var(--navy);
+}
+
+h3,
+.question,
+.interview,
+tbody td:first-child {
+    color: var(--teal);
+}
+
+h4 {
+    color: #8E4354;
+}
+
+strong,
+b {
+    color: #9B6410;
+}
+
+a {
+    color: var(--teal);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--coral);
+}
+
+h1::after,
+h2::after {
+    width: 68px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold), transparent);
+}
+
+.interview,
+.note,
+.warning,
+.success,
+.tip,
+.important,
+.example,
+.definition,
+blockquote {
+    box-shadow: var(--surface-shadow);
+}
+
+.interview {
+    color: #185C68;
+    background: #EDF8F7;
+    border-left-color: var(--teal);
+}
+
+.note {
+    color: #735116;
+    background: #FFF8E8;
+    border-left-color: var(--gold);
+}
+
+.tip,
+blockquote {
+    color: #255B68;
+    background: var(--teal-soft);
+    border-left-color: #2C9B99;
+}
+
+.important {
+    color: #7D3F4B;
+    background: #FFF0F1;
+    border-left-color: var(--coral);
+}
+
+.warning {
+    color: #873E4B;
+    background: #FFF0F1;
+    border-left-color: #C65B68;
+}
+
+.success {
+    color: #28604B;
+    background: #ECF8F0;
+    border-left-color: #3B9B70;
+}
+
+.example {
+    color: var(--ink);
+    background: #F2F6F8;
+    border-left-color: #71879A;
+}
+
+.definition {
+    color: #3B4D73;
+    background: #F1F3FA;
+    border-left-color: #6879B0;
+}
+
+hr {
+    height: 30px;
+    margin: 38px 0;
+    background: linear-gradient(to bottom,
+            transparent 0,
+            transparent 14px,
+            var(--line) 14px,
+            var(--line) 15px,
+            transparent 15px);
+}
+
+hr::before {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    width: 78px;
+    height: 11px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--teal), #3A9E98, var(--gold));
+    box-shadow: 0 3px 10px rgba(12, 113, 128, .18);
+    content: "";
+    transform: translateX(-50%);
+}
+
+hr::after {
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #FFFFFF;
+    background: var(--coral);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .75);
+}
+
+thead th,
+th {
+    background: linear-gradient(120deg, var(--navy), #155C70);
+}
+
+table {
+    border-color: var(--line);
+    box-shadow: var(--surface-shadow);
+}
+
+tbody tr:nth-child(odd) {
+    background: #FFFFFF;
+}
+
+tbody tr:nth-child(even) {
+    background: #F3F8F8;
+}
+
+tbody tr:hover {
+    background: #E1F2F0;
+}
+
+pre {
+    color: #26384D;
+    background: #F1F5F7;
+    border-left-color: #557187;
+}
+
+code {
+    color: #914358;
+    background: #F9EDF0;
+}
+
+hr,
+table,
+.doc-header,
+.interview,
+.note,
+.warning,
+.success,
+.tip,
+.important,
+.example,
+.definition,
+blockquote,
+pre {
+    break-inside: avoid;
+}
+
+@media (max-width: 600px) {
+    hr {
+        margin: 28px 0;
+    }
+
+    hr::before {
+        width: 58px;
+    }
+}
+
+/* ============================================================
+   VISIBLE WATERMARK LAYER
+============================================================ */
+body::before,
+body::after {
+    z-index: 20 !important;
+}
+
+body::before {
+    color: rgba(20, 43, 73, .17);
+    opacity: 1;
+}
+
+body::after {
+    opacity: .16;
+    mix-blend-mode: multiply;
+}
+
+/* Keep the divider clean without a center dot. */
+hr::after {
+    display: none !important;
+}
